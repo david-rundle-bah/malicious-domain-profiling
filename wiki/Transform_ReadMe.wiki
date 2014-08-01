@@ -13,3 +13,23 @@ How Maltego LocalTransform is queried intelligence from db?
   * {{{mfromEmail.py}}} (input: Email Address) to display whois (from:whois & passive_whois)
   * {{{mfromLikeEmail.py}}} (input: Email Address) to display whois (from:whois & passive_whois)
   * {{{mfromLikeIP.py}}} (input: IPv4 Address) to display IP addresses within same c-class IP (from: ip)
+
+==Installation==
+  # Copy MaltegoTransform.py to MalProfile folder
+  # Copy mSampleToDNS.py, mDnsToIP.py, mIPtoDomains.py, mDomainsToWhois.py, mGetAllSamples.py, mfromEmail.py, mfromLikeEmail.py, mfromOwner.py to /root/MalProfile/Maltego folder
+  # Add the path of /root/MalProfile, /root/MalProfile/Maltego by: PATH=/root/MalProfile:/root/MalProfile/Maltego:$PATH.  (test by: echo $PATH)
+  # Configure MalProfile.ini (make sure DBNAME contains your database (e.g. c2_PittyTiger.db)
+  # Test Maltego Local Transform. (e.g. {{{mSampleDNS.py <sample_name>}}})
+  # Create new Local Transform in Maltego (Refer to dump screens in [Transform_ReadMe] for detail parameters)
+    # Import new entities MalProfile/Maltego/MyEntities.mtz
+    # Create new Transform Sets called MalProfile
+    # Create new LocalTransforms:
+      * Sample -> mSampleToDNS.py
+      * DNS Name -> mDnsToIP.py
+      * c2_address -> mIPtoDomains.py
+      * Domain -> mDomainToWhois.py
+      * SamplesDB -> mGetAllSamples.py
+      * Email Address -> mfromEmail.py or mfromLikeEmail.py
+      * registrant -> mfromOwner.py
+    # Drag a SampleDB and name it as {{{database_name}}} at Properties(Description)
+    # Test check SampleDB by MalProfile->mGetAllSamples Transform
