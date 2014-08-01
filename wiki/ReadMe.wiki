@@ -101,7 +101,7 @@ Usage: MalProfile.py [options]
 For different usage scenario:
   # Check DB_ReadMe to understand how to grab intelligence with different known sources
   # Check Transform_ReadMe to understand which Maltego Transform is available to analysis collected intelligence
-  # Check INSTALLATION if you need help to setup MaltegoTransform (note: Community ver only display 12 items)
+  # Check Installation if you need help to setup MaltegoTransform (note: Community ver only display 12 items)
   # Check PittyTiger_ReadMe if you want to test a sample
 
 = LICENSE =
