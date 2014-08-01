@@ -44,16 +44,16 @@ Samples/*					# Samples for demonstration (not included in the code email ran2@v
 
 = Installation =
 
-  # unzip the MalProfile.zip to /Root/MalProfile
-  # apt-get install python-setuptools
-  # easy_install pip
-  # pip install python-whois
-  # pip install hashlib
-  # pip install mechanize
-  # pip install ConfigParser
-  # pip install python-nmap
-  # copy ./ReadMe/PyWhois/parser.py to /usr/local/lib/python2.7/dist-packages/whois/
-  # unzip MaltegoTransform-Python and copy MaltegoTransform.py to MalProfile directory 
+  # unzip the {{{MalProfile.zip}}} to {{{/Root/MalProfile}}}
+  # {{{apt-get install python-setuptools}}}
+  # {{{easy_install pip}}}
+  # {{{pip install python-whois}}}
+  # {{{pip install hashlib}}}
+  # {{{pip install mechanize}}}
+  # {{{pip install ConfigParser}}}
+  # {{{pip install python-nmap}}}
+  # {{{copy ./ReadMe/PyWhois/parser.py}}} to {{{/usr/local/lib/python2.7/dist-packages/whois/}}}
+  # {{{unzip MaltegoTransform-Python}}} and copy {{{MaltegoTransform.py}}} to MalProfile directory 
 
 
 = Configuration =
@@ -73,8 +73,7 @@ Maltego transforms (refer to screenshot for more details):
 	
 = Usage =
 
-  # Change to directory /Root/MalProfile
-  # Run the script ./MalProfile.py 
+  # Run the script {{{./MalProfile.py}}}
 
 {{{
 Usage: MalProfile.py [options]
