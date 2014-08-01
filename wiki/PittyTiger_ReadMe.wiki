@@ -1,0 +1,16 @@
+#summary Testing a sample
+
+= PittyTiger =
+
+Testing manually extracted data from PittyTiger Report. Please send [ran2@vxrl.org] for a {{{PittyTiger.db}}} for sample test of the tool.
+
+==Sample usage==
+
+  # Manual updated the database by extracting relevant data from PittyTiger Report by Airbus
+  # {{{MalProfile.py -c}}} to rescan all tables starting from c2 [table]
+  # {{{MalProfile.py -p}}} to update ip table from identified passive_ip and passive_dns
+  # {{{MalProfile.py -q}}} to update domains & whois tables from ip [table]
+  # {{{MalProfile.py -s}}} to update passive_domain & passive_whois tables from ip [table]
+  # {{{MalProfile.py -t}}} to update domains table from the domain part from dns contained in c2 tables
+  # {{{MalProfile.py -p}}} to re-run update ip from passiveDNS
+  # {{{MalProfile.py -q}}} to re-run update domains & passive_domain, whois & passive_whois tables
