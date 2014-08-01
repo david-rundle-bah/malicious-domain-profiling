@@ -62,7 +62,7 @@ Samples/*					# Samples for demonstration (not included in the code email ran2@v
   # Add the path of /root/MalProfile, /root/MalProfile/Maltego by: PATH=/root/MalProfile:/root/MalProfile/Maltego:$PATH.  (test by: echo $PATH)
   # Configure MalProfile.ini (make sure DBNAME contains your database (e.g. c2_PittyTiger.db)
   # Test Maltego Local Transform. (e.g. {{{mSampleDNS.py <sample_name>}}})
-  # Create new Local Transform in Maltego (Refer to dump screens in ReadMe/Transform for detail parameters)
+  # Create new Local Transform in Maltego (Refer to dump screens in [Transform_ReadMe] for detail parameters)
     # Import new entities MalProfile/Maltego/MyEntities.mtz
     # Create new Transform Sets called MalProfile
     # Create new LocalTransforms:
@@ -120,10 +120,10 @@ Usage: MalProfile.py [options]
 }}}
 
 For different usage scenario:
-  # Check DB_ReadMe to understand how to grab intelligence with different known sources
-  # Check Transform_ReadMe to understand which Maltego Transform is available to analysis collected intelligence
-  # Check Installation if you need help to setup MaltegoTransform (note: Community ver only display 12 items)
-  # Check PittyTiger_ReadMe if you want to test a sample
+  * Check [DB_ReadMe] to understand how to grab intelligence with different known sources
+  * Check [Transform_ReadMe] to understand which Maltego Transform is available to analysis collected intelligence
+  * Check [Installation] if you need help to setup MaltegoTransform (note: Community ver only display 12 items)
+  * Check [PittyTiger_ReadMe] if you want to test a sample
 
 = License =
 
