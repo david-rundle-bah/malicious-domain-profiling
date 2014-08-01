@@ -1,6 +1,6 @@
 #summary Understand how to grab intelligence with different known sources
 
-= MalProfile Database =
+= Database =
 
 How MalProfile database is kept?
 
