@@ -2,7 +2,7 @@
 
 = PittyTiger =
 
-Testing manually extracted data from PittyTiger Report. Please send [ran2@vxrl.org] for a {{{PittyTiger.db}}} for sample test of the tool.
+Testing manually extracted data from PittyTiger Report. Please send {{{ran2@vxrl.org}}} for a {{{PittyTiger.db}}} for sample test of the tool.
 
 ==Sample usage==
 
