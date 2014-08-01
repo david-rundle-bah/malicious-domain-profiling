@@ -1,0 +1,54 @@
+#summary Understand how to grab intelligence with different known sources
+
+= MalProfile Database =
+
+How MalProfile database is kept?
+
+Intelligences gathered from various sources and databases are captured in the following ways:
+
+If samples [or md5 hash] are available: 
+  # Put them inside the subdirectory ./files
+  # By using behavioural analysis or upload it to a sandbox, the DNSs (hostnames) are extracted
+  # {{{MalProfile.py -f <filename> -d <dns_name> [-md5 <hash>]}}} will update a chain of tables
+  # Tables updated: samples, detects, c2, ip, passive_dns, passive_ip, domains & whois
+
+If samples are not available: 
+  # The samples and c2 tables are manually updated 
+  # {{{MalProfile.py -c}}} will update a chain of tables
+  # Tables updated: ip, passive_dns, passive_ip, domains & whois
+
+If suspicious ip_addr is identified (ip_addr of same C-class subnet):
+  # f_ip ("friendly_ip") table is manually updated
+  # {{{MalProfile.py -p}}} will update ip table from sources originated from: f_c2, passive_dns, passive_ip
+
+If ip table is updated (because new â€˜parked-domainsâ€™ are identified):
+  # If the ip_addr are originated from "c2" (definitive malicious)
+  # {{{MalProfile.py -q}}} will update a 2 tables
+  # Tables updated: domains & whois tables
+
+If ip table is updated (because passive_dns are identified):
+  # {{{MalProfile.py -s}}} will update passive_domains from source originated from: f_c2, passive_dns, passive_ip
+  # {{{MalProfile.py -x}}} will update passive_whois from passive_domains
+  # option -s and -x options are divided because "parked-domains" may hanged because of bulk query issue
+  # Table updated: passive_domains (by -s) and/or passive_whois (by -x)
+
+If suspicious registrant is identified:
+  # Owner table is manually updated (can automated domaintools' reverse-whois)
+  # {{{MalProfile.py -o}}} will update a chain of tables
+  # Table updated: domains and whois + passive_ip
+
+If domains are parked to another suspicious ip (pull out from a pool for actual use in an attack):
+  # {{{MalProfile.py -r}}} will update passive_ip
+  # Table updated: passive_ip
+
+Two new functions are added (Jul 30)
+  # Adding domain part of a malicious dns from c2 to domains table
+  # {{{MalProfile.py -t}}} will update domains table
+
+=Example=
+Hence, to grab intelligence from the open source, the script may be executed in these orders:
+  # {{{MalProfile.py -f -d [-md5]}}}(if samples are available)
+  # {{{MalProfile.py -c}}} (if samples are not available)
+  # {{{MalProfile.py -p}}}, then {{{-q}}}, {{{-s}}} and {{{-x}}} (if f_c2, passive_ip or passive_dns is updated)
+  # {{{MalProfile.py -o}}}, then {{{-r}}} (if owner is updated)
+  # {{{MalProfile.py -t}}} (if sample is uploaded to VirusTotal)
