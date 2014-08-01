@@ -1,5 +1,7 @@
+#summary README MalProfile (version 1.0.0-beta)
 #labels Featured
-#README MalProfile (version 1.0.0-beta)
+
+<wiki:toc max_depth="1" />
 
 = Introduction =
 
@@ -10,9 +12,9 @@ MalProfile is a set of tools to:
 
 = History =
 
-Please refer to CHANGELOG
+Please refer to [CHANGELOG]
 
-= REQUIREMENTS =
+= Requirements =
 
   # Kali Linux 1.0.7 or later (for illustration purpose only, for advance users, just use the tool per your preference, in my case, I install it on my Mac)
   # Maltego Edition 3.4.0 or later (If community version is used, only 12 records will be randomly displayed)
@@ -22,7 +24,7 @@ Please refer to CHANGELOG
 (Other system with Python 2.7 and Maltego may work but never tried :) )
 
 
-= PACKAGE FILES =
+= Package Files =
 
 The following files are included in the MalProfile package.
 
@@ -40,9 +42,9 @@ Samples/*					# Samples for demonstration (not included in the code email ran2@v
 }}}
 
 
-= INSTALLATION =
+= Installation =
 
-MalProfile script:
+==MalProfile==
   # unzip the MalProfile.zip to /Root/MalProfile
   # apt-get install python-setuptools
   # easy_install pip
@@ -54,8 +56,28 @@ MalProfile script:
   # copy ./ReadMe/PyWhois/parser.py to /usr/local/lib/python2.7/dist-packages/whois/
   # unzip MaltegoTransform-Python and copy MaltegoTransform.py to MalProfile directory 
 
+==Maltego LocalTransform==
+  # Copy MaltegoTransform.py to MalProfile folder
+  # Copy mSampleToDNS.py, mDnsToIP.py, mIPtoDomains.py, mDomainsToWhois.py, mGetAllSamples.py, mfromEmail.py, mfromLikeEmail.py, mfromOwner.py to /root/MalProfile/Maltego folder
+  # Add the path of /root/MalProfile, /root/MalProfile/Maltego by: PATH=/root/MalProfile:/root/MalProfile/Maltego:$PATH.  (test by: echo $PATH)
+  # Configure MalProfile.ini (make sure DBNAME contains your database (e.g. c2_PittyTiger.db)
+  # Test Maltego Local Transform. (e.g. {{{mSampleDNS.py <sample_name>}}})
+  # Create new Local Transform in Maltego (Refer to dump screens in ReadMe/Transform for detail parameters)
+    # Import new entities MalProfile/Maltego/MyEntities.mtz
+    # Create new Transform Sets called MalProfile
+    # Create new LocalTransforms:
+      * Sample -> mSampleToDNS.py
+      * DNS Name -> mDnsToIP.py
+      * c2_address -> mIPtoDomains.py
+      * Domain -> mDomainToWhois.py
+      * SamplesDB -> mGetAllSamples.py
+      * Email Address -> mfromEmail.py or mfromLikeEmail.py
+      * registrant -> mfromOwner.py
+    # Drag a SampleDB and name it as {{{database_name}}} at Properties(Description)
+    # Test check SampleDB by MalProfile->mGetAllSamples Transform
 
-= CONFIGURATION =
+
+= Configuration =
 
 MalProfile script:
   # edit the MalProfile.ini file and fill in the DBNAME (Database file path) and VT_APIKEY (Virustotal API key)
@@ -70,8 +92,7 @@ Maltego transforms (refer to screenshot for more details):
   # create a new maltego graph, add a SampleDB object, change the properties to database filename and have fun! :)
 
 	
-= USAGE =
----------
+= Usage =
 
   # Change to directory /Root/MalProfile
   # Run the script ./MalProfile.py 
@@ -104,7 +125,7 @@ For different usage scenario:
   # Check Installation if you need help to setup MaltegoTransform (note: Community ver only display 12 items)
   # Check PittyTiger_ReadMe if you want to test a sample
 
-= LICENSE =
+= License =
 
 Copyright (C) 2014 Malware Domain Profiling Research Team
 
@@ -115,7 +136,7 @@ MalProfile is distributed in the hope that it will be useful, but WITHOUT ANY WA
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-= CONTRIBUTORS =
+= Contributors =
 
 Current contributors:
   * Frankie Li
