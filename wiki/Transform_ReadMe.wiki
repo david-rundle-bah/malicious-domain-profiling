@@ -1,0 +1,15 @@
+#summary Available Maltego Transform to analysis collected intelligence
+
+= Transformation =
+
+How Maltego LocalTransform is queried intelligence from db?
+
+  * {{{mGetAllSamples.py}}} (input:SampleDB) to display all samples in Maltego (from:samples)
+  * {{{mSampleToDNS.py}}} (input:Sample) to display dns, ip, exploits (from:c2, samples & detects)
+  * {{{mDnsToIP.py}}} (input:DNS Name) to display c2Address (from:c2, passive_dns)
+  * {{{mIPtoDomains.py}}} (input:IPv4 Address) to display c2_domains (from:ip & passive_domains)
+  * {{{mDomainToWhois.py}}} (input:Domain) to display whois (from:domains & passive_domains?)
+  * {{{mfromOwner.py}}} (input:registrant) to display whois (from:whois & passive_whois)
+  * {{{mfromEmail.py}}} (input: Email Address) to display whois (from:whois & passive_whois)
+  * {{{mfromLikeEmail.py}}} (input: Email Address) to display whois (from:whois & passive_whois)
+  * {{{mfromLikeIP.py}}} (input: IPv4 Address) to display IP addresses within same c-class IP (from: ip)
