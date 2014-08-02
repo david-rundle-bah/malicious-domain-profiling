@@ -103,6 +103,8 @@ For different usage scenario:
     * Check [Transform_ReadMe#Installation] if you need help to setup MaltegoTransform (note: Community ver only display 12 items)
   * Check [PittyTiger_ReadMe] if you want to test a sample
 
+Remark: Some scan may initiate high volume of requests to servers, so please use with caution.
+
 = License =
 
 Copyright (C) 2014 Malware Domain Profiling Research Team
