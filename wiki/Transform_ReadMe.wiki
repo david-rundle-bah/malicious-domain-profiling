@@ -33,3 +33,7 @@ How Maltego LocalTransform is queried intelligence from db?
       * registrant -> {{{mfromOwner.py}}}
     # Drag a SampleDB and name it as {{{<database_name>}}} at Properties(Description)
     # Test check SampleDB by {{{MalProfile->mGetAllSamples}}} Transform
+
+==How-To==
+
+Please refer to [Transform_HowTo]
